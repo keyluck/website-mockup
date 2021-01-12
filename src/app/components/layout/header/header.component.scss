@@ -8,8 +8,13 @@
   padding-right: 20px;
 }
 
-.my-nav-bar > * {
+.nav-content > * {
   padding-top: 2px;
   margin-left: 5px;
   margin-right: 10px;
+}
+
+.nav-link.active {
+  color: white;
+  background-color: hsl(282, 50%, 45%);
 }
