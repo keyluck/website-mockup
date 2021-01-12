@@ -17,60 +17,27 @@
                 <clr-icon shape="bell" class="is-solid"></clr-icon>
                 <clr-icon shape="user" class="is-solid"></clr-icon>
             </div>
-            
-
-
-        </div>
         
+        </div>
     </nav>
     <div class="content-container">
         <div class="content-area">
-            
 
            <router-outlet></router-outlet>
-           
         </div>
-       
                 <clr-vertical-nav [clrVerticalNavCollapsible]="true" [clr-nav-level]="1">
-                    <a clrVerticalNavLink routerLink="/" routerLinkActive="active"
-                        [routerLinkActiveOptions]="{exact:true}">
-                        <clr-icon clrVerticalNavIcon shape="grid-chart"></clr-icon>
-                        Dashboard
-                    </a>
-                    <a clrVerticalNavLink routerLink="/userprofile" routerLinkActive="active">
-                        <clr-icon clrVerticalNavIcon shape="user" class="is-solid"></clr-icon>
-                        User Profile
-                    </a>
-                    <a clrVerticalNavLink routerLink="/userprofile" routerLinkActive="active">
-                        <clr-icon clrVerticalNavIcon shape="tasks"></clr-icon>
-                        Table List
-                    </a>
-                    <a clrVerticalNavLink routerLink="/userprofile" routerLinkActive="active">
-                        <clr-icon clrVerticalNavIcon shape="list"></clr-icon>
-                        Typography
-                    </a>
-                    <a clrVerticalNavLink routerLink="/userprofile" routerLinkActive="active">
-                        <clr-icon clrVerticalNavIcon shape="nodes"></clr-icon>
-                        Icons
-                    </a>
-                    <a clrVerticalNavLink routerLink="/userprofile" routerLinkActive="active">
-                        <clr-icon clrVerticalNavIcon shape="map-marker"></clr-icon>
-                        Maps
-                    </a>
-                    <a clrVerticalNavLink routerLink="/userprofile" routerLinkActive="active">
-                        <clr-icon clrVerticalNavIcon shape="bell" class="is-solid"></clr-icon>
-                        Notifications
-                    </a>
-                    <a clrVerticalNavLink routerLink="/userprofile" routerLinkActive="active">
-                        <clr-icon clrVerticalNavIcon shape="network-globe"></clr-icon>
-                        RTL Support
-                    </a>
-            
+                    
+                    <ul>
+                        <li *ngFor="let link of sidenavlinks" [ngStyle]="{'list-style-type': 'none'}">
+                            <a clrVerticalNavLink [routerLink]="[link.url]" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact:true}">
+                                <clr-icon clrVerticalNavIcon [attr.shape]="link.icon"></clr-icon>
+                                {{link.name}}
+                            </a>  
+                        </li>
+                    </ul>
+                    
                 </clr-vertical-nav>
-
-                
-
-                
-          
+  
     </div>
 </div>
