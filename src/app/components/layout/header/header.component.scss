@@ -1,0 +1,15 @@
+.clr-form {
+  padding: 0px;
+}
+
+.my-nav-bar {
+  display: flex;
+  align-content: center;
+  padding-right: 20px;
+}
+
+.my-nav-bar > * {
+  padding-top: 2px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
