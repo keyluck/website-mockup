@@ -1,7 +1,6 @@
 
 <div class="card">
-    <div class="big-icon"></div>
-
+    <fa-icon [icon]="faTwitter" size="2x" [ngStyle]="getStyles()" ></fa-icon>
     <div class="card-header">
         Followers
     </div>
@@ -11,7 +10,7 @@
         </div>
         
     </div>
-    <div class="card-footer">
+    <div class="card-footer" [ngStyle]="{'opacity': '0.8'}">
         <clr-icon shape="clock" class="has-badge"></clr-icon>
         Just updated
     </div>

@@ -20,6 +20,7 @@ import { EmailSubscriptionsComponent } from './components/dashboard/email-subscr
 import { CompletedTasksComponent } from './components/dashboard/completed-tasks/completed-tasks.component';
 import { TaskListComponent } from './components/dashboard/task-list/task-list.component';
 import { EmployeeStatsComponent } from './components/dashboard/employee-stats/employee-stats.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { EmployeeStatsComponent } from './components/dashboard/employee-stats/em
     BrowserModule,
     AppRoutingModule,
     ClarityModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,11 @@
 
 <div style="width: 100%" class="card">
-    <div class="big-icon"></div>
+    
+        <fa-icon [icon]="faClone" size="2x" [ngStyle]="getStyles()"></fa-icon>
 
 
     <div class="card-header">
+        
         Used Space
     </div>
     <div class="card-block">
@@ -12,7 +14,7 @@
         </div>
         
     </div>
-    <div class="card-footer">
+    <div class="card-footer" [ngStyle]="{'color': '#9e57bc'}">
         <clr-icon shape="exclamation-triangle" style="color:red"></clr-icon>
         Get More Space
     </div>
