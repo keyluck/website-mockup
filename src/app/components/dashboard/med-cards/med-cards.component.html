@@ -1,0 +1,34 @@
+<div class="clr-row">
+    <div class="clr-col-lg-4 clr-col-md-12 clr-col-sm-12" 
+            *ngFor="let info of cardInfo; index as i">
+        <div class="card">
+            <div class="graph" [ngStyle]="getGraphIcon(info.graph)"></div>
+            <div class="card-header">
+                {{ info.headerContent }}
+            </div>
+            <div class="card-block">
+                <div class="card-title">
+                    <div class="icon-div" 
+                            [style.display]="getBlockContentStyles(i)" 
+                            [style.color]="info.blockIconColor"
+                            >
+                        <clr-icon [attr.shape]="info.blockIcon" size=20>
+                        </clr-icon>
+                        {{ info.blockIconValue }}
+                    </div>
+                    
+                    {{ info.blockContent }}
+                    
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <clr-icon [attr.shape]="info.footerIcon" ></clr-icon>
+                {{ info.footerContent }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

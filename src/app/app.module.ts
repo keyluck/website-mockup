@@ -11,27 +11,29 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 
 
-import { DailySalesComponent } from './components/dashboard/daily-sales/daily-sales.component';
-import { EmailSubscriptionsComponent } from './components/dashboard/email-subscriptions/email-subscriptions.component';
-import { CompletedTasksComponent } from './components/dashboard/completed-tasks/completed-tasks.component';
 import { TaskListComponent } from './components/dashboard/task-list/task-list.component';
 import { EmployeeStatsComponent } from './components/dashboard/employee-stats/employee-stats.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SmallCardsComponent } from './components/dashboard/small-cards/small-cards.component';
+import { MedCardsComponent } from './components/dashboard/med-cards/med-cards.component';
+import { MessagesComponent } from './components/errorhandling/messages/messages.component';
+
+
+import { HttpClientModule } from '@angular/common/http'
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/mockserver/in-memory-data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DailySalesComponent,
-  
-    EmailSubscriptionsComponent,
-    CompletedTasksComponent,
     TaskListComponent,
     EmployeeStatsComponent,
     UserProfileComponent,
     DashboardComponent,
     SmallCardsComponent,
+    MedCardsComponent,
+    MessagesComponent,
 
   ],
   imports: [
@@ -40,6 +42,10 @@ import { SmallCardsComponent } from './components/dashboard/small-cards/small-ca
     ClarityModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
     
   ],
   providers: [],

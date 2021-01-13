@@ -50,7 +50,7 @@ export class SmallCardsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-   getStyles(bgColor: string) {
+  getStyles(bgColor: string) {
     let myStyles = {
       "position":"absolute",
       "color": "white",
