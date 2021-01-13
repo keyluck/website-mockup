@@ -8,7 +8,7 @@ import { NavLinks } from './navlinks'
 export class HeaderComponent implements OnInit {
 
   sidenavlinks: NavLinks[] = [
-    { name: "Dashboard", url: "/", icon: "grid-chart" },
+    { name: "Dashboard", url: "/", icon: "grid-chart", iconClass: "is-solid" },
     { name: "User Profile", url: "/userprofile", icon: "user"},
     { name: "Table List", url: "/userprofile", icon: "tasks"},
     { name: "Typography", url: "/userprofile", icon: "list"},

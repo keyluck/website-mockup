@@ -25,19 +25,22 @@
 
            <router-outlet></router-outlet>
         </div>
-                <clr-vertical-nav [clrVerticalNavCollapsible]="true" [clr-nav-level]="1">
+        <clr-vertical-nav [clrVerticalNavCollapsible]="true" [clr-nav-level]="1">
+            
+            <ul>
+                <li *ngFor="let link of sidenavlinks" [ngStyle]="{'list-style-type': 'none', 'margin': '20px'}">
+                    <a clrVerticalNavLink [routerLink]="[link.url]" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}"
+                        [ngStyle]="{'border-radius': '3px', 'font-size': '14px', 'height':'45px', 'line-height':'45px', 'padding-left':'25px'}">
                     
-                    <ul>
-                        <li *ngFor="let link of sidenavlinks" [ngStyle]="{'list-style-type': 'none'}">
-                            <a clrVerticalNavLink [routerLink]="[link.url]" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact:true}">
-                                <clr-icon clrVerticalNavIcon [attr.shape]="link.icon"></clr-icon>
-                                {{link.name}}
-                            </a>  
-                        </li>
-                    </ul>
-                    
-                </clr-vertical-nav>
+                        <clr-icon [attr.shape]="link.icon" [attr.class]="link.iconClass" size="22" [ngStyle]="{'margin-right':'10px'}"></clr-icon>
+                        {{link.name}}
+                        
+                    </a>  
+                </li>
+            </ul>
+            
+        </clr-vertical-nav>
   
     </div>
 </div>
