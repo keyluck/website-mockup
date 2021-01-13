@@ -30,6 +30,10 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@webcomponents/webcomponentsjs": "^2.0.0",
+    "angular": "^1.8.2",
+    "angular-chartist.js": "^5.0.0-beta.2",
+    "chartist": "^0.11.4",
+    "ng-chartist": "^4.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -38,6 +42,7 @@
     "@angular-devkit/build-angular": "~0.1100.6",
     "@angular/cli": "~11.0.6",
     "@angular/compiler-cli": "~11.0.6",
+    "@types/chartist": "^0.11.0",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",

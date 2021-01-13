@@ -1,0 +1,23 @@
+<div class="clr-row" >
+    <div class="clr-col-lg-3 clr-col-md-6 clr-col-sm-6" 
+        *ngFor="let info of cardInfo; index as i"> 
+            <div class="card" >
+                <fa-icon [icon]="info.mainIcon" size="2x" 
+                            [ngStyle]="getStyles(info.bgColor)"></fa-icon>
+                <div class="card-header" >
+                    {{ info.headerContent }}
+                </div>
+                <div class="card-block">
+                    <div class="card-title">
+                        {{ info.blockContent }}
+                    </div>
+
+                </div>
+                <div class="card-footer" [style.color]="getFooterTextColor(i)">
+                    <clr-icon [attr.shape]="info.footerIcon" 
+                                [style.color]="getFooterIconColor(i)"></clr-icon>
+                    {{ info.footerContent }}
+                </div>
+            </div>
+    </div>
+</div>
