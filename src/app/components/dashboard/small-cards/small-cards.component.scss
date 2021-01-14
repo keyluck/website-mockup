@@ -1,12 +1,23 @@
 .card-header {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
   text-align: right;
   opacity: 0.8;
   font-size: 14px;
   border-bottom: none;
-  padding-bottom: 5px;
+
+  word-wrap: break-word;
+  padding-left: 160px;
 }
 
+.card-block {
+  padding-top: 5px;
+}
 .card-title {
   text-align: right;
   font-size: 24px;
+  word-wrap: break-word;
+  padding-left: 100px;
 }
