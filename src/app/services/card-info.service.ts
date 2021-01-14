@@ -6,7 +6,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { MessageService } from './message.service'
 import { SmallCardFormat } from '../components/dashboard/small-cards/small-card-format'
 import { MedCardFormat } from '../components/dashboard/med-cards/med-card-format'
-
+import { Task } from '../components/dashboard/task-list/task'
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,9 @@ import { MedCardFormat } from '../components/dashboard/med-cards/med-card-format
 export class CardInfoService {
   private smallCardUrl = 'api/smallCardInfo'
   private medCardUrl = 'api/medCardInfo'
+  private taskCardUrl = 'api/taskCardInfo'
 
+  
   httpOption = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -36,6 +38,15 @@ export class CardInfoService {
       .pipe(
         tap(_ => this.log('fetched card info')),
         catchError(this.handleError<MedCardFormat[]>('getMedCardInfo', []))
+      );
+    
+  }
+
+  getTaskCardInfo(): Observable<Task[]> {
+    return this.http.get<Task[]>(this.taskCardUrl)
+      .pipe(
+        tap(_ => this.log('fetched card info')),
+        catchError(this.handleError<Task[]>('getTaskCardInfo', []))
       );
     
   }

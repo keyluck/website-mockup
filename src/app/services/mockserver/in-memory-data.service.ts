@@ -69,8 +69,40 @@ export class InMemoryDataService implements InMemoryDbService {
       }
     ];
 
+    let taskCardInfo = [
+      {
+        name: `Sign contract for "What are conference organizers afraid of?"`,
+        completed: false,
+        type: [
+          'Bugs', 'Website', 'Server'
+        ],
+      },
+      {
+        name: `Lines From Great Russian Literature? Or E-mails From My Boss?`,
+        completed: false,
+        type: [
+          'Bugs', 'Server'
+        ],
+      },
+      {
+        name: `Flooded: One year later, assessing what was lost and what was 
+                found when a ravaging rain swept through metro Detroit`,
+        completed: false,
+        type: [
+          'Bugs', 'Website', 'Server'
+        ],
+      },
+      {
+        name: `Create 4 Invisible User Experiences you Never Knew About`,
+        completed: false,
+        type: [
+          'Bugs',
+        ],
+      },
+    ];
 
-    return {smallCardInfo, medCardInfo};
+
+    return {smallCardInfo, medCardInfo, taskCardInfo};
   }
 
 }
