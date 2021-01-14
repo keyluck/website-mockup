@@ -3,7 +3,7 @@ import { Task } from './task'
 import { CardInfoService } from '../../../services/card-info.service'
 
 
-interface taskType {
+interface TaskType {
   title: string;
   icon: string;
   iconClass: string;
@@ -18,7 +18,11 @@ interface taskType {
 })
 export class TaskListComponent implements OnInit {
 
-  taskTypes: taskType[] = [];
+  taskTypes: TaskType[] = [
+    { title: "Bugs", icon: "bug", iconClass: "is-solid"},
+    { title: "Website", icon: "code", iconClass: "" },
+    { title: "Server", icon: "cloud", iconClass: "is-solid" },
+    ]
 
   taskCardInfo: Task[] = [];
     
@@ -27,22 +31,17 @@ export class TaskListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTaskCardInfo();
-    this.getUniqueTaskTypes();
+   
   }
 
   getTaskCardInfo(): void {
     this.cardInfoService.getTaskCardInfo()
       .subscribe(cardInfo => this.taskCardInfo = cardInfo);
+    
+    
   }
 
-  getUniqueTaskTypes() {
-    let res = [
-    { title: "Bugs", icon: "bug", iconClass: "is-solid"},
-    { title: "Website", icon: "code", iconClass: "" },
-    { title: "Server", icon: "cloud", iconClass: "is-solid" },
-    
-    ]
-    this.taskTypes = res;
-  }
+ 
+  
 
 }

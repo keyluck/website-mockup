@@ -13,6 +13,8 @@ export class MedCardsComponent implements OnInit {
 
   medCardInfo: MedCardFormat[] = [];
 
+
+
   //Variable for dynamic icon/text color for daily sales card
   dailySalesNum = 55;
 
@@ -29,13 +31,11 @@ export class MedCardsComponent implements OnInit {
 
   getGraphIcon(graph: string) {
     let graphStyles = {
+      "display":"block",
       "height": "200px",
-      "width": "330px",
       "background-color": graph,
       "border-radius": "0.15rem",
-      "margin-top": "-10px",
-      "margin-left": "20px",
-      "margin-bottom": "30px",
+      "margin": "-10px 20px 30px 20px",
       "z-index": "1",
       "box-shadow": "0 5px 5px 0 rgba(0, 0, 0, 0.2)",
     }

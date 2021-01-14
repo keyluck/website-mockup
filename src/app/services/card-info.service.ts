@@ -7,6 +7,7 @@ import { MessageService } from './message.service'
 import { SmallCardFormat } from '../components/dashboard/small-cards/small-card-format'
 import { MedCardFormat } from '../components/dashboard/med-cards/med-card-format'
 import { Task } from '../components/dashboard/task-list/task'
+import { Employee } from '../components/dashboard/employee-stats/employee'
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class CardInfoService {
   private smallCardUrl = 'api/smallCardInfo'
   private medCardUrl = 'api/medCardInfo'
   private taskCardUrl = 'api/taskCardInfo'
-
+  private employeeCardUrl = 'api/employeeCardInfo'
   
   httpOption = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -47,6 +48,15 @@ export class CardInfoService {
       .pipe(
         tap(_ => this.log('fetched card info')),
         catchError(this.handleError<Task[]>('getTaskCardInfo', []))
+      );
+    
+  }
+
+  getEmployeeCardInfo(): Observable<Employee[]> {
+    return this.http.get<Employee[]>(this.employeeCardUrl)
+      .pipe(
+        tap(_ => this.log('fetched card info')),
+        catchError(this.handleError<Employee[]>('getEmployeeCardInfo', []))
       );
     
   }

@@ -69,7 +69,7 @@ export class InMemoryDataService implements InMemoryDbService {
       }
     ];
 
-    let taskCardInfo = [
+    const taskCardInfo = [
       {
         name: `Sign contract for "What are conference organizers afraid of?"`,
         completed: false,
@@ -101,8 +101,17 @@ export class InMemoryDataService implements InMemoryDbService {
       },
     ];
 
+    const employeeCardInfo = [
+      { id: '1', name: 'Dakota Rice', salary: '36738', location: 'Niger' },
+      { id: '2', name: 'Minvera Hooper', salary: '23789', location: 'Curaçao' },
+      { id: '3', name: 'Sage Rodriguez', salary: '56142', location: 'Netherlands' },
+      { id: '4', name: 'Philip Chaney', salary: '38735', location: 'Korea, South' },
+      
+    ];
+    
+    
 
-    return {smallCardInfo, medCardInfo, taskCardInfo};
+    return {smallCardInfo, medCardInfo, taskCardInfo, employeeCardInfo};
   }
 
 }
