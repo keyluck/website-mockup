@@ -1,9 +1,7 @@
 .card-header {
   color: white;
   display: flex;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: hsl(282, 43%, 54%);
+  font-size: 16px;
   border-radius: 0.15rem;
   margin-top: -10px;
   margin-left: 10px;
@@ -11,13 +9,23 @@
   margin-bottom: 30px;
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: rgb(161, 80, 196);
+  background: linear-gradient(
+    90deg,
+    rgba(161, 80, 196, 1) 7%,
+    rgba(135, 48, 172, 1) 64%
+  );
 }
 
 .card-header > * {
-  margin-right: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
+.card-header > * > * {
+  margin-right: 10px;
+  margin-left: 10px;
+}
 .clr-row {
   border-bottom: 1px solid lightgray;
   padding-bottom: 4px;

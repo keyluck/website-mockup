@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskListComponent implements OnInit {
 
+  taskTypes = [
+    { title: "Bugs", icon: "bug", iconClass: "is-solid"},
+    { title: "Website", icon: "code", iconClass: "" },
+    { title: "Server", icon: "cloud", iconClass: "is-solid" },
+    
+  ]
+    
+
   constructor() { }
 
   ngOnInit(): void {

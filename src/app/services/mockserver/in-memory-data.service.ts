@@ -8,7 +8,7 @@ export class InMemoryDataService implements InMemoryDbService {
   
 
   createDb() {
-    const smallCardInfo = [    
+    const smallCardInfo = [
       {
         mainIcon: 'faClone',
         bgColor: "#FF9306",
@@ -41,7 +41,7 @@ export class InMemoryDataService implements InMemoryDbService {
         footerContent: "Just updated",
         footerIcon: "clock",
       },
-    ]
+    ];
 
     
     const medCardInfo = [
@@ -68,6 +68,8 @@ export class InMemoryDataService implements InMemoryDbService {
         footerIcon: 'clock',
       }
     ];
+
+
     return {smallCardInfo, medCardInfo};
   }
 

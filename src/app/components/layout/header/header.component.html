@@ -1,25 +1,23 @@
 
 <div class="main-container">
     
-    
-    <nav class="subnav">
+    <div class="content-container" [ngStyle]="{'background-color':'#eee', 'border':'none'}">
+
         
-        <div class="Nav">
+        <div class="content-area" [ngStyle]="{'padding':'5px 30px 5px'}">
+
+            <div class="Nav">
             
                 <div class="nav-title">Dashboard</div>
                 <div class="nav-search-icons">
-                    <input type="text" id="basic" placeholder="Enter value here" class="clr-input" /> 
+                    <input type="text" id="basic" placeholder="Search..." class="clr-input" />
                     <clr-icon shape="grid-view" class="is-solid" size="22"></clr-icon>
                     <clr-icon shape="bell" class="is-solid" size="22"></clr-icon>
                     <clr-icon shape="user" class="is-solid" size="22"></clr-icon>
                 </div>
-           
-        
-        </div>
-    </nav>
-    <div class="content-container">
-        <div class="content-area">
-
+            
+            
+            </div>
            <router-outlet></router-outlet>
         </div>
         <clr-vertical-nav [clrVerticalNavCollapsible]="true" [clr-nav-level]="1">

@@ -1,12 +1,13 @@
+
 <div class="card">
     <div class="card-header">
         Tasks:
-        <clr-icon shape="bug" class="is-solid"></clr-icon>
-        Bugs
-        <clr-icon shape="code"></clr-icon>
-        Website
-        <clr-icon shape="cloud"></clr-icon>
-        Server
+        <ul>
+            <li *ngFor="let type of taskTypes" [ngStyle]="{'list-style-type': 'none', 'display': 'inline'}">
+                <clr-icon [attr.shape]="type.icon" [attr.class]="type.iconClass" size="22"></clr-icon>
+                {{type.title}}
+            </li>
+        </ul>
     </div>
 
     <div class="card-block">
@@ -74,5 +75,6 @@
         </div>
     
     </div>
+
 
 </div>
