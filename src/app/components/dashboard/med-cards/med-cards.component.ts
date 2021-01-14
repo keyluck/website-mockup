@@ -11,7 +11,7 @@ import { CardInfoService } from '../../../services/card-info.service'
 })
 export class MedCardsComponent implements OnInit {
 
-  cardInfo: MedCardFormat[] = [];
+  medCardInfo: MedCardFormat[] = [];
 
   //Variable for dynamic icon/text color for daily sales card
   dailySalesNum = 55;
@@ -24,7 +24,7 @@ export class MedCardsComponent implements OnInit {
 
   getMedCardInfo(): void {
     this.cardInfoService.getMedCardInfo()
-      .subscribe(cardInfo => this.cardInfo = cardInfo);
+      .subscribe(cardInfo => this.medCardInfo = cardInfo);
   }
 
   getGraphIcon(graph: string) {
@@ -55,14 +55,14 @@ export class MedCardsComponent implements OnInit {
   getDailySales(i: number, num: number) {
     let str = num.toString() + "%";
 
-    this.cardInfo[i].blockIconValue = str;
+    this.medCardInfo[i].blockIconValue = str;
     if (num > 0) {
-      this.cardInfo[i].blockIcon = "arrow"
-      this.cardInfo[i].blockIconColor = "green"
+      this.medCardInfo[i].blockIcon = "arrow"
+      this.medCardInfo[i].blockIconColor = "green"
     }
     else if (num < 0) {
-      this.cardInfo[i].blockIcon = "arrow down"
-      this.cardInfo[i].blockIconColor = "red"
+      this.medCardInfo[i].blockIcon = "arrow down"
+      this.medCardInfo[i].blockIconColor = "red"
     }
     else {
       

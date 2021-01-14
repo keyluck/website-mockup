@@ -1,3 +1,16 @@
+.ng-fa-icon {
+  position: absolute;
+  color: white;
+  margin-top: -18px;
+  margin-left: 20px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+  height: 80px;
+  width: 80px;
+  border-radius: 0.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 .card-header {
   display: inline-flex;
   flex-direction: row;
@@ -7,7 +20,6 @@
   opacity: 0.8;
   font-size: 14px;
   border-bottom: none;
-
   word-wrap: break-word;
   padding-left: 160px;
 }

@@ -1,6 +1,5 @@
-import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
-export interface CardInfo {
-    mainIcon: IconDefinition;
+export interface SmallCardFormat {
+    mainIcon: string;
     bgColor: string;
     headerContent?: string;
     blockContent?: string;

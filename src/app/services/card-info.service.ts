@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs'
 import { catchError, tap } from 'rxjs/operators';
 
 import { MessageService } from './message.service'
+import { SmallCardFormat } from '../components/dashboard/small-cards/small-card-format'
 import { MedCardFormat } from '../components/dashboard/med-cards/med-card-format'
 
 
@@ -11,23 +12,35 @@ import { MedCardFormat } from '../components/dashboard/med-cards/med-card-format
   providedIn: 'root'
 })
 export class CardInfoService {
-  private cardUrl = 'api/cardInfo'
+  private smallCardUrl = 'api/smallCardInfo'
+  private medCardUrl = 'api/medCardInfo'
 
   httpOption = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
   constructor(private http: HttpClient,
-              private messageService: MessageService) { }
+    private messageService: MessageService) { }
+  
+  getSmallCardInfo(): Observable<SmallCardFormat[]> {
+    return this.http.get<SmallCardFormat[]>(this.smallCardUrl)
+      .pipe(
+        tap(_ => this.log('fetched card info')),
+        catchError(this.handleError<SmallCardFormat[]>('getSmallCardInfo', []))
+      );
+    
+  }
 
   getMedCardInfo(): Observable<MedCardFormat[]> {
-    return this.http.get<MedCardFormat[]>(this.cardUrl)
+    return this.http.get<MedCardFormat[]>(this.medCardUrl)
       .pipe(
         tap(_ => this.log('fetched card info')),
         catchError(this.handleError<MedCardFormat[]>('getMedCardInfo', []))
       );
     
   }
+
+ 
 
 
   /**
