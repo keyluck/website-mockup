@@ -19,7 +19,7 @@
   font-weight: 300;
 }
 
-.nav-search-icons {
+.nav-bar-icons {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -27,9 +27,19 @@
   align-items: center;
 }
 
-.nav-search-icons > * {
+.nav-bar-icons > * {
   margin-right: 20px;
   margin-left: 20px;
+}
+
+#searchIcon {
+  margin-left: -20px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: white;
 }
 
 .clr-vertical-nav {
