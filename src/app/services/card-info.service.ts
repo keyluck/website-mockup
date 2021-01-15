@@ -4,8 +4,7 @@ import { Observable, of } from 'rxjs'
 import { catchError, tap } from 'rxjs/operators';
 
 import { MessageService } from './message.service'
-import { SmallCardFormat } from '../components/dashboard/small-cards/small-card-format'
-import { MedCardFormat } from '../components/dashboard/med-cards/med-card-format'
+import { MedChartInfo } from '../components/dashboard/med-cards/medChartInfo'
 import { Task } from '../components/dashboard/task-list/task'
 import { Employee } from '../components/dashboard/employee-stats/employee'
 
@@ -13,8 +12,8 @@ import { Employee } from '../components/dashboard/employee-stats/employee'
   providedIn: 'root'
 })
 export class CardInfoService {
-  private smallCardUrl = 'api/smallCardInfo'
-  private medCardUrl = 'api/medCardInfo'
+  private smallCardUrl = 'api/smBlockContent'
+  private medCardUrl = 'api/medCardData'
   private taskCardUrl = 'api/taskCardInfo'
   private employeeCardUrl = 'api/employeeCardInfo'
   
@@ -25,20 +24,20 @@ export class CardInfoService {
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
   
-  getSmallCardInfo(): Observable<SmallCardFormat[]> {
-    return this.http.get<SmallCardFormat[]>(this.smallCardUrl)
+  getSmallCardInfo(): Observable<string[]> {
+    return this.http.get<string[]>(this.smallCardUrl)
       .pipe(
         tap(_ => this.log('fetched card info')),
-        catchError(this.handleError<SmallCardFormat[]>('getSmallCardInfo', []))
+        catchError(this.handleError<string[]>('getSmallCardInfo', []))
       );
     
   }
 
-  getMedCardInfo(): Observable<MedCardFormat[]> {
-    return this.http.get<MedCardFormat[]>(this.medCardUrl)
+  getMedCardInfo(): Observable<MedChartInfo[]> {
+    return this.http.get<MedChartInfo[]>(this.medCardUrl)
       .pipe(
         tap(_ => this.log('fetched card info')),
-        catchError(this.handleError<MedCardFormat[]>('getMedCardInfo', []))
+        catchError(this.handleError<MedChartInfo[]>('getMedCardInfo', []))
       );
     
   }

@@ -1,3 +1,10 @@
+.graph {
+  display: block;
+  border-radius: 0.15rem;
+  margin: -10px 20px 30px 20px;
+  z-index: 1;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
 .card-header {
   font-size: 24px;
   border-bottom: none;

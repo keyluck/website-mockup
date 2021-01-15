@@ -8,66 +8,29 @@ export class InMemoryDataService implements InMemoryDbService {
   
 
   createDb() {
-    const smallCardInfo = [
-      {
-        mainIcon: 'faClone',
-        bgColor: "#FF9306",
-        headerContent: "Used Space",
-        blockContent: "49/50 GB",
-        footerContent: "Get More Space",
-        footerIcon: "exclamation-triangle",
-      },
-      {
-        mainIcon: 'faStoreAlt',
-        bgColor: "#389A48",
-        headerContent: "Revenue",
-        blockContent: "$34,245",
-        footerContent: "Last 24 Hours",
-        footerIcon: "calendar",
-      },
-      {
-        mainIcon: 'faExclamationCircle',
-        bgColor: "#E75A50",
-        headerContent: "Fixed Issues",
-        blockContent: "75",
-        footerContent: "Track from Github",
-        footerIcon: "tag",
-      },
-      {
-        mainIcon: 'faTwitter',
-        bgColor: "#1DA1F2",
-        headerContent: "Followers",
-        blockContent: "+245",
-        footerContent: "Just updated",
-        footerIcon: "clock",
-      },
+    const smBlockContent = [
+      "49/50 GB",
+      "$34,245",
+      "75",
+      "+245"
     ];
 
-    
-    const medCardInfo = [
+    const medCardData = [
       {
-        graph: '#379e48',
-        headerContent: 'Daily Sales',
-        blockContent: 'increase in todays sales',
-        blockIcon: 'arrow',
-        footerContent: 'updated 4 minutes ago',
-        footerIcon: 'clock',
+        data: [11, 14, 4, 13, 16, 14, 34],
+        labels: ['M', 'T', 'W', 'Th', 'F', 'S', 'S',]
       },
       {
-        graph: '#ff9306',
-        headerContent: 'Email Subscriptions',
-        blockContent: 'Last Campaign Performance',
-        footerContent: 'campaign sent 2 days ago',
-        footerIcon: 'clock',
+        data: [460, 350, 300, 650, 486, 350, 330, 360, 495, 510, 650, 690],
+        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D']
       },
       {
-        graph: '#e75a50',
-        headerContent: 'Completed Tasks',
-        blockContent: 'Last Campaign Performance',
-        footerContent: 'campaign sent 2 days ago',
-        footerIcon: 'clock',
+        data: [110, 690, 310, 280, 250, 220, 200, 190],
+        labels: ['12p', '3p', '6p', '9p', '12a', '3a', '6a', '9a']
       }
-    ];
+
+    ]
+    
 
     const taskCardInfo = [
       {
@@ -111,7 +74,7 @@ export class InMemoryDataService implements InMemoryDbService {
     
     
 
-    return {smallCardInfo, medCardInfo, taskCardInfo, employeeCardInfo};
+    return {smBlockContent, medCardData, taskCardInfo, employeeCardInfo};
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SmallCardFormat } from './small-card-format'
 import { faClone } from '@fortawesome/free-regular-svg-icons';
-import { faStoreAlt, faExclamationCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faStoreAlt, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { CardInfoService } from '../../../services/card-info.service'
@@ -12,29 +12,55 @@ import { CardInfoService } from '../../../services/card-info.service'
   styleUrls: ['./small-cards.component.scss']
 })
 export class SmallCardsComponent implements OnInit {
-  smallCardInfo: SmallCardFormat[] = [];
+
+  smBlockContent: string[] = [];
+  smallCardInfo: SmallCardFormat[] = [
+    {
+        mainIcon: faClone,
+        bgColor: "#FF9306",
+        headerContent: "Used Space",
+        footerContent: "Get More Space",
+        footerIcon: "exclamation-triangle",
+      },
+      {
+        mainIcon: faStoreAlt,
+        bgColor: "#389A48",
+        headerContent: "Revenue",
+        footerContent: "Last 24 Hours",
+        footerIcon: "calendar",
+      },
+      {
+        mainIcon: faExclamationCircle,
+        bgColor: "#E75A50",
+        headerContent: "Fixed Issues",
+        footerContent: "Track from Github",
+        footerIcon: "tag",
+      },
+      {
+        mainIcon: faTwitter,
+        bgColor: "#1DA1F2",
+        headerContent: "Followers",
+        footerContent: "Just updated",
+        footerIcon: "clock",
+      },
+  ];
+
+ 
+
 
   constructor(private cardInfoService: CardInfoService) { }
 
   ngOnInit(): void {
     this.getSmallCardInfo();
+    
   }
 
   getSmallCardInfo(): void {
     this.cardInfoService.getSmallCardInfo()
-      .subscribe(cardInfo => this.smallCardInfo = cardInfo);
+      .subscribe(cardInfo => this.smBlockContent = cardInfo);
   }
 
-  // Convert strings from DB to fa icon
-  getIcon(s: string) {  
-    switch (s) {
-      case 'faClone': return faClone;
-      case 'faStoreAlt': return faStoreAlt;
-      case 'faExclamationCircle': return faExclamationCircle;
-      case 'faTwitter': return faTwitter;
-      default: return faTimes;
-    }
-  }
+  
   
   getIconColor(bgColor: string) {
     let color = {

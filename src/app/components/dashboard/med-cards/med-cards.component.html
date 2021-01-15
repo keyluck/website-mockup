@@ -1,12 +1,9 @@
-
-
-
 <div class="clr-row">
     <div class="clr-col-lg-4 clr-col-md-12 clr-col-sm-12" 
             *ngFor="let info of medCardInfo; index as i">
-        <div class="card">
-            <div class="graph" [ngStyle]="getGraphIcon(info.graph)">
-                <app-line-chart ></app-line-chart>
+        <div  class="card">
+            <div class="graph" [ngStyle]="getGraphBackground(info.graph)">
+                <app-line-chart [chartInfo]="medChartInfo[i]"></app-line-chart>
             </div>
             
             <div class="card-header">
@@ -23,6 +20,9 @@
                         {{ info.blockIconValue }}
                     </div>
                     
+                    {{(info.blockIcon==="arrow"? "increase" : 
+                        (info.blockIcon==="arrow down"? "decrease" : ""))
+                    }}
                     {{ info.blockContent }}
                     
                 </div>
@@ -35,6 +35,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 

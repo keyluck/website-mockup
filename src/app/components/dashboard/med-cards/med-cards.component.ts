@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MedCardFormat } from './med-card-format'
-
-import { CardInfoService } from '../../../services/card-info.service'
+import { MedCardFormat } from './med-card-format';
+import { MedChartInfo } from './medChartInfo';
+import { CardInfoService } from '../../../services/card-info.service';
 
 
 @Component({
@@ -11,7 +11,32 @@ import { CardInfoService } from '../../../services/card-info.service'
 })
 export class MedCardsComponent implements OnInit {
 
-  medCardInfo: MedCardFormat[] = [];
+  medChartInfo: MedChartInfo[] = [];
+
+  medCardInfo: MedCardFormat[] = [
+      {
+        graph: '#379e48',
+        headerContent: 'Daily Sales',
+        blockContent: ' in todays sales',
+        blockIcon: 'arrow',
+        footerContent: 'updated 4 minutes ago',
+        footerIcon: 'clock',
+      },
+      {
+        graph: '#ff9306',
+        headerContent: 'Email Subscriptions',
+        blockContent: 'Last Campaign Performance',
+        footerContent: 'campaign sent 2 days ago',
+        footerIcon: 'clock',
+      },
+      {
+        graph: '#e75a50',
+        headerContent: 'Completed Tasks',
+        blockContent: 'Last Campaign Performance',
+        footerContent: 'campaign sent 2 days ago',
+        footerIcon: 'clock',
+      }
+    ];
 
 
 
@@ -26,18 +51,12 @@ export class MedCardsComponent implements OnInit {
 
   getMedCardInfo(): void {
     this.cardInfoService.getMedCardInfo()
-      .subscribe(cardInfo => this.medCardInfo = cardInfo);
+      .subscribe(cardInfo => this.medChartInfo = cardInfo);
   }
 
-  getGraphIcon(graph: string) {
+  getGraphBackground(graph: string) {
     let graphStyles = {
-      "display":"block",
-      "height": "200px",
       "background-color": graph,
-      "border-radius": "0.15rem",
-      "margin": "-10px 20px 30px 20px",
-      "z-index": "1",
-      "box-shadow": "0 5px 5px 0 rgba(0, 0, 0, 0.2)",
     }
     return graphStyles;
   }
