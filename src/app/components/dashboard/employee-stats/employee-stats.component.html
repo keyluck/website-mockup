@@ -26,7 +26,7 @@
             </div>
             <div *ngFor="let employee of employeeCardInfo; index as i"
                     [ngStyle]="{'border-bottom': (i==employeeCardInfo.length-1? 'none' : '1px solid lightgray')}">
-                <div class="clr-row" [ngStyle]="{'padding':'0px'}">
+                <div class="clr-row" >
                     <div class="clr-col-2">
                         {{ employee.id }}
                     </div>

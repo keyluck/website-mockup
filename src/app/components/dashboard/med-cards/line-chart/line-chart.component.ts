@@ -19,15 +19,17 @@ export class LineChartComponent {
 
   lineChartOptions:ChartOptions = {
     responsive: true,
-   
+    scales: {
+      gridLines: {
+        color: 'white',
+      }
+    }
     
   };
 
   lineChartColors: Color[] = [
     {
-      
       borderColor: 'white',
-      
     },
   ]
   
