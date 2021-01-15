@@ -22,6 +22,9 @@ import { MessagesComponent } from './components/errorhandling/messages/messages.
 import { HttpClientModule } from '@angular/common/http'
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/mockserver/in-memory-data.service';
+import { LineChartComponent } from './components/dashboard/med-cards/line-chart/line-chart.component';
+import { ChartsModule } from 'ng2-charts'
+
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { InMemoryDataService } from './services/mockserver/in-memory-data.servic
     SmallCardsComponent,
     MedCardsComponent,
     MessagesComponent,
+    LineChartComponent,
 
   ],
   imports: [
@@ -45,7 +49,8 @@ import { InMemoryDataService } from './services/mockserver/in-memory-data.servic
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    ChartsModule
     
   ],
   providers: [],
