@@ -12,7 +12,7 @@ import { Employee } from '../components/dashboard/employee-stats/employee'
   providedIn: 'root'
 })
 export class CardInfoService {
-  private smallCardUrl = 'api/smBlockContent'
+  private smallCardUrl = 'api/smCardData'
   private medCardUrl = 'api/medCardData'
   private taskCardUrl = 'api/taskCardInfo'
   private employeeCardUrl = 'api/employeeCardInfo'

@@ -11,6 +11,8 @@ import { CardInfoService } from '../../../services/card-info.service';
 })
 export class MedCardsComponent implements OnInit {
 
+  public isLoading = true;
+
   medChartInfo: MedChartInfo[] = [];
 
   medCardInfo: MedCardFormat[] = [
@@ -51,7 +53,10 @@ export class MedCardsComponent implements OnInit {
 
   getMedCardInfo(): void {
     this.cardInfoService.getMedCardInfo()
-      .subscribe(cardInfo => this.medChartInfo = cardInfo);
+      .subscribe(cardInfo => {
+        this.medChartInfo = cardInfo
+        this.isLoading = false;
+      });
   }
 
   getGraphBackground(graph: string) {

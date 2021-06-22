@@ -8,7 +8,7 @@ export class InMemoryDataService implements InMemoryDbService {
   
 
   createDb() {
-    const smBlockContent = [
+    const smCardData = [
       "49/50 GB",
       "$34,245",
       "75",
@@ -74,7 +74,7 @@ export class InMemoryDataService implements InMemoryDbService {
     
     
 
-    return {smBlockContent, medCardData, taskCardInfo, employeeCardInfo};
+    return {smCardData, medCardData, taskCardInfo, employeeCardInfo};
   }
 
 }

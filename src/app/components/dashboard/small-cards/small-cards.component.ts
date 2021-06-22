@@ -13,7 +13,7 @@ import { CardInfoService } from '../../../services/card-info.service'
 })
 export class SmallCardsComponent implements OnInit {
 
-  smBlockContent: string[] = [];
+  smCardInfo: string[] = [];
   smallCardInfo: SmallCardFormat[] = [
     {
         mainIcon: faClone,
@@ -57,7 +57,7 @@ export class SmallCardsComponent implements OnInit {
 
   getSmallCardInfo(): void {
     this.cardInfoService.getSmallCardInfo()
-      .subscribe(cardInfo => this.smBlockContent = cardInfo);
+      .subscribe(cardInfo => this.smCardInfo = cardInfo);
   }
 
   
