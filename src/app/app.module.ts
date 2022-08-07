@@ -21,13 +21,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/mockserver/in-memory-data.service';
 import { LineChartComponent } from './components/dashboard/med-cards/line-chart/line-chart.component';
-import { ChartsModule } from 'ng2-charts';
 import { TableListComponent } from './components/table-list/table-list.component';
 import { TypographyComponent } from './components/typography/typography.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { MapsComponent } from './components/maps/maps.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { RtlSupportComponent } from './components/rtl-support/rtl-support.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,7 @@ import { RtlSupportComponent } from './components/rtl-support/rtl-support.compon
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
     }),
-    ChartsModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -17,6 +17,7 @@
   line-height: 30px;
   padding: 0.625rem 0;
   font-weight: 300;
+  min-width: 200px;
 }
 
 .nav-bar-icons {
@@ -28,8 +29,7 @@
 }
 
 .nav-bar-icons > * {
-  margin-right: 20px;
-  margin-left: 20px;
+  margin: 0 10px;
 }
 
 #searchIcon {
@@ -51,4 +51,5 @@
 .nav-link.active {
   color: white;
   background-color: #8a39ac;
+  border: none;
 }

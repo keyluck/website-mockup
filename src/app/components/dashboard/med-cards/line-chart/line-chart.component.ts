@@ -1,11 +1,13 @@
-import { Component, Input, SimpleChange } from '@angular/core';
+import { Component, Input, SimpleChange, ViewChild } from '@angular/core';
 import {
   ChartType,
-  ChartDataSets,
+  ChartDataset,
   ChartOptions,
   GridLineOptions,
+  ChartDatasetProperties,
+  ChartConfiguration,
 } from 'chart.js';
-import { Color, Label } from 'ng2-charts';
+import { BaseChartDirective } from 'ng2-charts';
 import { MedChartInfo } from '../medChartInfo';
 interface OnChanges {
   ngOnChanges(changes: SimpleChange): void;
@@ -18,49 +20,58 @@ interface OnChanges {
 })
 export class LineChartComponent implements OnChanges {
   @Input() chartInfo!: MedChartInfo;
-  lineChartData: ChartDataSets[] = [];
-  lineChartLabels: Label[] = [];
+  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  lineChartData: ChartConfiguration['data'] = {
+    datasets: [],
+  };
+
   ngOnChanges(changes: SimpleChange) {
-    this.lineChartData = [
-      {
-        data: this.chartInfo.data,
-      },
-    ];
-    this.lineChartLabels = this.chartInfo.labels;
+    this.lineChartData = {
+      datasets: [
+        {
+          data: this.chartInfo.data,
+          label: '',
+          yAxisID: 'y-axis',
+          xAxisID: 'x-axis',
+          backgroundColor: '#DDD',
+          borderColor: '#DDD',
+          pointBackgroundColor: '#DDD',
+          pointBorderColor: '#DDD',
+          pointHoverBackgroundColor: '#DDD',
+          pointHoverBorderColor: '#DDD',
+        },
+      ],
+      labels: this.chartInfo.labels,
+    };
   }
 
-  lineChartOptions: ChartOptions = {
+  lineChartOptions: ChartConfiguration['options'] = {
     responsive: true,
 
     scales: {
-      scaleLabel: {
-        fontColor: 'white',
+      'x-axis': {
+        grid: {
+          color: '#BBB',
+        },
+        ticks: {
+          color: '#CCC',
+        },
       },
-      xAxes: [
-        {
-          gridLines: {
-            color: 'white',
-            zeroLineColor: 'white',
-          },
+      'y-axis': {
+        grid: {
+          color: '#BBB',
         },
-      ],
-      yAxes: [
-        {
-          gridLines: {
-            color: 'white',
-            zeroLineColor: 'white',
-          },
+        ticks: {
+          color: '#CCC',
         },
-      ],
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
     },
   };
-
-  lineChartColors: Color[] = [
-    {
-      borderColor: 'white',
-      pointBackgroundColor: 'white',
-    },
-  ];
 
   lineChartLegend = false;
   lineChartPlugins = [];
