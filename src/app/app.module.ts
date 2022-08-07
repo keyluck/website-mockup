@@ -10,7 +10,6 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 
-
 import { TaskListComponent } from './components/dashboard/task-list/task-list.component';
 import { EmployeeStatsComponent } from './components/dashboard/employee-stats/employee-stats.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -18,13 +17,17 @@ import { SmallCardsComponent } from './components/dashboard/small-cards/small-ca
 import { MedCardsComponent } from './components/dashboard/med-cards/med-cards.component';
 import { MessagesComponent } from './components/errorhandling/messages/messages.component';
 
-
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/mockserver/in-memory-data.service';
 import { LineChartComponent } from './components/dashboard/med-cards/line-chart/line-chart.component';
-import { ChartsModule } from 'ng2-charts'
-
+import { ChartsModule } from 'ng2-charts';
+import { TableListComponent } from './components/table-list/table-list.component';
+import { TypographyComponent } from './components/typography/typography.component';
+import { IconsComponent } from './components/icons/icons.component';
+import { MapsComponent } from './components/maps/maps.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+import { RtlSupportComponent } from './components/rtl-support/rtl-support.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,12 @@ import { ChartsModule } from 'ng2-charts'
     MedCardsComponent,
     MessagesComponent,
     LineChartComponent,
-
+    TableListComponent,
+    TypographyComponent,
+    IconsComponent,
+    MapsComponent,
+    NotificationsComponent,
+    RtlSupportComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,13 +55,12 @@ import { ChartsModule } from 'ng2-charts'
     BrowserAnimationsModule,
     FontAwesomeModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
-    ChartsModule
-    
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
+    ChartsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
